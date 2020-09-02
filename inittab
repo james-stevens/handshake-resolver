@@ -1,0 +1,2 @@
+::respawn:/sbin/syslogd -n -O -
+::respawn:/usr/sbin/named -f -4 -u nobody -t /opt/named

@@ -1,0 +1,3 @@
+#! /bin/sh
+
+docker run -it -p 953:953 -p 53:53/udp -p 53:53 handshake-resolver $*
