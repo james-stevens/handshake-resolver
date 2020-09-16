@@ -6,6 +6,13 @@ all TLDs contained in both the ICANN and Handhsake environments.
 Where there are TLDs that exist in both Handshake and ICANN, for backwards compatibility, I give
 preference to the ICANN one.
 
+
+## ROOT Zone XFR Support
+This container will also support making the ROOT zone available by XFR (AXFR / IXFR) to anybody who asks.
+This is a new fewature in v1.1
+
+
+# handshake-bridge Companion
 This is designed to pair with my `handshake-bridge` repo which maintains the merged & signed ROOT
 zone for this resolver service. If you run `handshake-bridge` yourself, you
 can choose whether to give preference to Handshake or ICANN TLDs. This only affects those 
