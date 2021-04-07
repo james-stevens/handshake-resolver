@@ -12,10 +12,14 @@ RUN cp -a /dev/null /opt/named/dev
 RUN cp -a /dev/zero /opt/named/dev
 RUN cp -a /dev/random /opt/named/dev
 RUN cp -a /dev/urandom /opt/named/dev
+RUN cp -a /etc/bind/rndc.key /opt/named/etc/bind
 
-RUN chown -R nobody: /opt/named/zones /opt/named/var
+RUN chown -R named: /opt/named/zones /opt/named/var
+RUN rm -f /etc/periodic/monthly/dns-root-hints
 
 COPY inittab /etc/inittab
 COPY named.conf /opt/named/etc/bind
+COPY servers.inc /opt/named/etc/bind
+COPY update_servers /etc/periodic/weekly
 
 CMD [ "/sbin/init" ]

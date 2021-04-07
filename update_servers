@@ -1,0 +1,32 @@
+#! /bin/sh
+
+tmp=$(mktemp)
+dig +short @127.0.0.1 hnd.regserv.net | sort > ${tmp}
+if test $(wc -l < ${tmp}) -lt 3
+	then
+		rm -f ${tmp}
+		exit
+	fi
+	
+base=/opt/named/etc/bind
+dst=${base}/servers.inc
+old=${base}/servers.old
+new=${base}/servers.new
+
+awk 'BEGIN { print "masters hnd_masters {" }
+	{ printf "\t%s port 5300;\n",$0 }
+	END { print "};" }' ${tmp} > ${new}
+
+if ! cmp -s ${new} ${dst}
+	then
+		mv ${dst} ${old}
+		mv ${new} ${dst}
+		if /usr/sbin/named-checkconf -t /opt/named -c /etc/bind/named.conf
+			then
+				/usr/sbin/rndc reconfig
+			else
+				mv ${old} ${dst}
+			fi
+	fi
+
+rm -f ${tmp} ${new}
