@@ -21,6 +21,7 @@ if ! cmp -s ${new} ${dst}
 	then
 		mv ${dst} ${old}
 		mv ${new} ${dst}
+		chmod 444 ${dst}
 		if /usr/sbin/named-checkconf -t /opt/named -c /etc/bind/named.conf
 			then
 				/usr/sbin/rndc reconfig
