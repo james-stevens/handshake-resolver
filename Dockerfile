@@ -3,6 +3,9 @@
 
 FROM alpine
 
+RUN apk update
+RUN apk upgrade
+
 RUN apk add bind
 
 RUN mkdir -p /opt /opt/named /opt/named/dev /opt/named/etc
