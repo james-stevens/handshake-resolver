@@ -25,4 +25,6 @@ COPY named.conf /opt/named/etc/bind
 COPY servers.inc /opt/named/etc/bind
 COPY update_servers /etc/periodic/weekly
 
+COPY start_syslogd /usr/local/bin
+
 CMD [ "/sbin/init" ]

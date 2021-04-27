@@ -1,0 +1,13 @@
+#! /bin/sh
+##########################################################################
+#                                                                        #
+#    (c) Copyright 2021-2021 JRCS Ltd - All Rights Reserved              #
+#                                                                        #
+##########################################################################
+
+if test "${SYSLOG_SERVER}"
+	then
+		/sbin/syslogd -n -b 9 -s 100000 -R ${SYSLOG_SERVER} -L
+	else
+		/sbin/syslogd -n -O -
+	fi
