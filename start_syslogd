@@ -7,7 +7,7 @@
 
 if test "${SYSLOG_SERVER}"
 	then
-		/sbin/syslogd -n -b 9 -s 100000 -R ${SYSLOG_SERVER} -L
+		exec /sbin/syslogd -n -b 9 -s 100000 -R ${SYSLOG_SERVER} -L
 	else
-		/sbin/syslogd -n -O -
+		exec /sbin/syslogd -n -O -
 	fi

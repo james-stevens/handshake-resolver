@@ -1,3 +1,4 @@
+::wait:/usr/local/bin/fix_perms
 ::respawn:/usr/local/bin/start_syslogd
 ::respawn:/usr/sbin/crond -f -l 9
 ::respawn:/usr/sbin/named -f -4 -u named -t /opt/named

@@ -1,7 +1,7 @@
 # (c) Copyright 2019-2020, James Stevens ... see LICENSE for details
 # Alternative license arrangements are possible, contact me for more information
 
-FROM alpine
+FROM alpine:3.13
 
 RUN apk update
 RUN apk upgrade
@@ -26,5 +26,6 @@ COPY servers.inc /opt/named/etc/bind
 COPY update_servers /etc/periodic/weekly
 
 COPY start_syslogd /usr/local/bin
+COPY fix_perms /usr/local/bin
 
 CMD [ "/sbin/init" ]
