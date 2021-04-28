@@ -1,0 +1,3 @@
+#! /bin/sh
+
+chown named: /opt/named/zones
