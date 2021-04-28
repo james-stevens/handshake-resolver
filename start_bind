@@ -1,0 +1,5 @@
+#! /bin/sh
+
+extra="-4"
+if test "${WITH_BIND_V6}" = "Y"; then extra=""; fi
+exec /usr/sbin/named -f ${extra} -u named -t /opt/named

@@ -27,5 +27,6 @@ COPY update_servers /etc/periodic/weekly
 
 COPY start_syslogd /usr/local/bin
 COPY startup /usr/local/bin
+COPY start_bind /usr/local/bin
 
 CMD [ "/sbin/init" ]
