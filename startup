@@ -1,3 +1,4 @@
 #! /bin/sh
 
 chown named: /opt/named/zones
+/etc/periodic/weekly/update_servers

@@ -1,7 +1,14 @@
 #! /bin/sh
 
 tmp=$(mktemp)
-dig +short @127.0.0.1 hnd.regserv.net | sort > ${tmp}
+if test "${EXCLUDE_MASTERS}"
+	then
+		ex=$(echo ${EXCLUDE_MASTERS} | tr ' ' '|')
+		dig +short @127.0.0.1 hnd.regserv.net | grep -vE '^('"${ex}"')$' | sort > ${tmp}
+	else
+		dig +short @127.0.0.1 hnd.regserv.net | sort > ${tmp}
+	fi
+
 if test $(wc -l < ${tmp}) -lt 3
 	then
 		rm -f ${tmp}

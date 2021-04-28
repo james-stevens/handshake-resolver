@@ -26,6 +26,6 @@ COPY servers.inc /opt/named/etc/bind
 COPY update_servers /etc/periodic/weekly
 
 COPY start_syslogd /usr/local/bin
-COPY fix_perms /usr/local/bin
+COPY startup /usr/local/bin
 
 CMD [ "/sbin/init" ]
