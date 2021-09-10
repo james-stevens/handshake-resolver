@@ -24,6 +24,7 @@ COPY inittab /etc/inittab
 COPY named.conf /opt/named/etc/bind
 COPY servers.inc /opt/named/etc/bind
 COPY update_servers /etc/periodic/weekly
+COPY sync_clean /etc/periodic/daily
 
 COPY start_syslogd /usr/local/bin
 COPY startup /usr/local/bin
