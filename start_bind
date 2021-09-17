@@ -1,5 +1,10 @@
 #! /bin/sh
 
+if test "${INTERNAL_HOSTING}" = "Y"
+	then
+		cp /opt/named/etc/bind/servers.internal /opt/named/etc/bind/servers.inc
+	fi
+
 extra="-4"
 if test "${WITH_BIND_V6}" = "Y"; then extra=""; fi
 exec /usr/sbin/named -f ${extra} -u named -t /opt/named

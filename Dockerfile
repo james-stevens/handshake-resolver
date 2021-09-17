@@ -18,7 +18,7 @@ RUN rm -f /etc/periodic/monthly/dns-root-hints
 
 COPY inittab /etc/inittab
 COPY named.conf /opt/named/etc/bind
-COPY servers.inc /opt/named/etc/bind
+COPY servers.internal servers.inc /opt/named/etc/bind/
 COPY update_servers /etc/periodic/weekly
 COPY sync_clean /etc/periodic/daily
 
