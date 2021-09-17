@@ -8,13 +8,9 @@ RUN apk upgrade
 
 RUN apk add bind
 
-RUN mkdir -p /opt /opt/named /opt/named/dev /opt/named/etc
+RUN mkdir -p /opt /opt/named /opt/named /opt/named/etc
 RUN mkdir -p /opt/named/etc/bind /opt/named/zones /opt/named/var /opt/named/var/run
 
-RUN cp -a /dev/null /opt/named/dev
-RUN cp -a /dev/zero /opt/named/dev
-RUN cp -a /dev/random /opt/named/dev
-RUN cp -a /dev/urandom /opt/named/dev
 RUN cp -a /etc/bind/rndc.key /opt/named/etc/bind
 
 RUN chown -R named: /opt/named/zones /opt/named/var
