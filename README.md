@@ -15,7 +15,7 @@ This is a new fewature in v1.1
 ## NOTE
 
 NOTE: The merged ROOT zone is signed using keys that I hold, so you are effectively trusting me to
-Do a good job.
+do a good job.
 
 This is the `DS` record itself, for the KSK I have used - so this is the `DS` that this resolver will be validating 
 against. If you want to do a full DNSSEC validation, you will need this `DS` to validate the ROOT/KSK.
