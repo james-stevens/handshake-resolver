@@ -40,9 +40,12 @@ You will also need to use the `--no-sig0` option to keep `bind` happy, so add th
 	--no-sig0
 
 
-### 2. First makes a set of keys
+### 2. Make a set of keys
 
 Make a set of keys (KSK & ZSK) & put them in the sub-directory `/keys` in your `named` `chroot` directory
+
+Use `dnssec-keygen` for this.
+
 
 ### 3. Add the following to your `named.conf`
 
@@ -56,7 +59,7 @@ Make a set of keys (KSK & ZSK) & put them in the sub-directory `/keys` in your `
 		inline-signing yes;
 		};
 
-Where your `hsd` (that has the `axfr` plug-in) is listening on `127.0.0.9`
+Where your `hsd` (that has the `axfr` plug-in) is listening on `127.0.0.9` (see above)
 
 You will also need the follow items in the `options` section of your `named.conf`
 
