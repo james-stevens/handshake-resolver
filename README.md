@@ -33,7 +33,7 @@ used dynamic signing in `bind` to sign the zone.
 
 If you make it listen in an address in the `localhost` subnet, say `127.0.0.9`, then an AXFR can't be done from outside.
 
-You will also need to use the `--no-sig0` option to keep `bind` happy.
+You will also need to use the `--no-sig0` option to keep `bind` happy, so add the following command line options to `hsd` when you start it
 
 	--ns-host 127.0.0.9
 	--ns-port 53
