@@ -1,4 +1,9 @@
 # handshake-resolver
+
+THIS DOESN'T WORK ANy MORE - the handhsake root zone has become too big
+
+
+
 This is a container running a `bind` DNS Resolver with a Handshake &amp; ICANN ROOT data to
 provide a robust and fully RFC compliant DNS resolver service, with full DNSSEC suppport, for
 all TLDs contained in both the ICANN and Handhsake environments.
