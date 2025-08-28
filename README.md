@@ -1,7 +1,8 @@
 # handshake-resolver
 
-THIS DOESN'T WORK ANy MORE - the handhsake root zone has become too big
+THIS DOESN'T WORK ANY MORE - the handhsake root zone has become too big
 
+#---------------------------------------------------------------
 
 
 This is a container running a `bind` DNS Resolver with a Handshake &amp; ICANN ROOT data to
